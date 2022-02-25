@@ -11,8 +11,8 @@ In t2(docker) befindet sich nur das von mir genutze Volume, wo sich die PostgreS
 ## Task 3
 Um den Inhalt von t3 zu nutzen, müsste man 
 1. Ansible installieren (apt install ansible)
-2. In ´hosts´ die IP auf die eigene VM ändern
-3. In ´ansible.cfg´ den Pfad zum private key ändern
+2. In `hosts` die IP auf die eigene VM ändern
+3. In `ansible.cfg` den Pfad zum private key ändern
 
 ## Task 4
 Für die Azure Aufgabe habe ich die App aus Task 1 modifiziert, damit sich einfacher ein Dockerimage bauen lässt. Die App findet sich in t1.1. Mein dev.azure.com Projekt ist privat, denn Microsoft bietet öffentlichen Projekten keine kostenlose Rechenleistung mehr an. Das Image ist in einer Azure Container Instance deponiert und kann jederzeit in einer Azure Container Instance gestartet werden. 
