@@ -1,0 +1,26 @@
+---
+
+- hosts: nginx
+  become: true
+  tasks:
+  - name: push html to default nginx html directory
+    copy:
+      src: files/index.html
+      dest: /usr/share/nginx/html/index.html
+  - name: push png aswell   
+    copy:
+      src: files/pexon.png
+      dest: /usr/share/nginx/html/pexon.png
+  - name: push nginx.cfg
+    copy:
+      src: files/nginx.cfg
+      dest: /etc/nginx/sites-available/nginx.cfg
+  - name: create symlink
+    file: 
+      src: /etc/nginx/sites-available/nginx.cfg
+      dest: /etc/nginx/sites-enabled/default
+      state: link
+  - name: restart nginx
+    service: 
+      name: nginx
+      state: restarted

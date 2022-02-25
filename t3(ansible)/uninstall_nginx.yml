@@ -1,0 +1,12 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: delete nginx
+      apt: 
+        name: nginx
+        state: absent
+    - name: delete nginx-common
+      apt: 
+        name: nginx-common
+        state: absent
